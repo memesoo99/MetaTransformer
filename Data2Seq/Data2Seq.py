@@ -6,15 +6,15 @@ import cv2 as cv
 import torchvision.transforms as transforms
 import clip
 import torchaudio
-import Hyper_Spectrum
-import Text
-import Time_Series
-import Image
-import Video
-import Acoustic
-import Graph
+from . import Hyper_Spectrum
+from . import Text
+from . import Time_Series
+from . import Image
+from . import Video
+from . import Acoustic
+from . import Graph
 from transformers.models.clip import CLIPTokenizer
-from Text import zero_padding
+from .Text import zero_padding
 
 class Data2Seq(nn.Module):
 

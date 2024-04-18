@@ -1,3 +1,5 @@
 Data2Seq/__pycache__/Acoustic.cpython-312.pyc
 .vscode/launch.json
 *.pyc
+desctex/*
+train_log/*

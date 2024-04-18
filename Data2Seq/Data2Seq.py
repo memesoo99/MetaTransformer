@@ -18,12 +18,12 @@ from .Text import zero_padding
 
 class Data2Seq(nn.Module):
 
-    def __init__(self,modality,dim):
+    def __init__(self,modality,dim, image_size=224):
         super().__init__()
         self.modality = modality
         self.embed_dim = dim
         if self.modality == 'image' or self.modality == 'infrared' or self.modality == 'x-ray':
-            self.embed = Image.PatchEmbed(embed_dim=self.embed_dim)
+            self.embed = Image.PatchEmbed(img_size = image_size, embed_dim=self.embed_dim)
         elif self.modality == 'text':
             self.embed = CLIPTokenizer.from_pretrained("openai/clip-vit-large-patch14")
         elif self.modality == 'video':
